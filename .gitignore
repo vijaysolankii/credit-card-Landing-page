@@ -13,7 +13,7 @@ dist-ssr
 *.local
 assets/
 demo.html
-
+notes.md
 
 # Editor directories and files
 .vscode/*

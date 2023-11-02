@@ -10,3 +10,23 @@
 >> minify all img and reuse 
 >> add animation overflow-hidden and classbased animation
 >> site upload to netlify
+
+>> animation
+    >> add loader
+    >> header fadeDown
+
+    >> heading overflow heading animation
+    >> fade animation (2 elements)
+    >> fadeInUp animation (1 elements)
+    >> images fade ater all text come
+
+
+    >> fade slider
+
+    for next 3 section follow this
+        >> overflow hidden for heading
+        >> fadeInLeft or fade for text
+        >> fade one by one
+
+    fade CTA and footer
+
