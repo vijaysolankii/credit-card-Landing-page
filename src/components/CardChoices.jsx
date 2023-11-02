@@ -1,5 +1,5 @@
 import React from 'react'
-import Vcards from '../images/Vcards.png'
+import {Vcards} from '../images/Vcards.png'
 
 const CardChoices = () => {
   return (
