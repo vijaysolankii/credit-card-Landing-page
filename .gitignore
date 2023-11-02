@@ -13,7 +13,7 @@ dist-ssr
 *.local
 assets/
 demo.html
-public/
+
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +25,29 @@ public/
 *.njsproj
 *.sln
 *.sw?
+
+
+/node_modules
+.github/**/node_modules
+/coverage
+/cli
+/lib
+/peers
+/example
+.vscode
+.DS_Store
+.parcel-cache
+tailwind.config.js
+index.html
+yarn.lock
+yarn-error.log
+types/generated/*.d.ts
+
+.turbo
+
+
+# Generated files
+/src/corePluginList.js
+
+# Generated files during tests
+/tests/evaluate-tailwind-functions.test.html
