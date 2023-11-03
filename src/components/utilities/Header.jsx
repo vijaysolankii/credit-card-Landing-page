@@ -27,10 +27,10 @@ const Header = () => {
     <header>
 
       <nav>
-        <div className="container mx-auto px-5">
-          <div className='flex items-center justify-end lg:justify-between py-3 lg:py-5'>
+        <div className="container">
+          <div className='wrapperNav'>
 
-            <a className='mr-auto lg:m-0' href="#" rel='nofollow'>
+            <a className='logo' href="#" rel='nofollow'>
               <svg className='max-w-[100px] lg:max-w-full' width="140" height="48" viewBox="0 0 140 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 15.9976V24.8839C3.02378 24.8818 6.0183 25.4784 8.81221 26.6398C11.6061 27.8011 14.1446 29.5043 16.2824 31.6519C18.4196 33.7987 20.1146 36.3475 21.2703 39.1526C22.4261 41.9576 23.0199 44.964 23.018 47.9997H31.8604C31.8524 39.5157 28.4933 31.3815 22.5202 25.3819C16.5472 19.3822 8.44802 16.0073 0 15.9976H0Z" fill="#F637EC"/>
                 <path d="M44.2203 0H30.207C37.2961 4.51154 43.3028 10.543 47.7963 17.6615V3.58863C47.7956 2.63664 47.4186 1.72386 46.748 1.05093C46.0775 0.378005 45.1683 -2.35566e-07 44.2203 0Z" fill="#F637EC"/>
@@ -42,7 +42,7 @@ const Header = () => {
               </svg>
             </a>
 
-            <ul className={`text-white navbar-list flex gap-[15px] md:gap-[40px] ${isActive ? 'active' : ''}`}>
+            <ul className={`${isActive ? 'active' : ''}`}>
               {
                 navItems.map((item,index) => (
                   <li key={index}><a onClick={toggleMenu} className='hyperlink' href="#">{item}</a></li>
@@ -63,13 +63,13 @@ const Header = () => {
               }
             </ul>
 
-            <div className='gap-x-[10px] md:gap-x-[50px] flex '>
-              <select className="appearance-none capitalize text-lg font-semibold px-5 bg-select-img bg-no-repeat bg-[length:15px] bg-center  bg-right outline-0 text-white bg-dark" name="languages" id="languages">
+            <div className='selectWrapper'>
+              <select name="languages" id="languages">
                 <option value="hin">hindi</option>
                 <option value="eng">eng</option>
                 <option value="heb">Hebrew</option>
               </select>
-              <div className='hidden lg:block inline-block relative'>
+              <div className='mobNav'>
                 <a className='btn' href="#">
                   <span className="squre-1"></span>
                   <span className="squre-2"></span>
@@ -79,7 +79,7 @@ const Header = () => {
 
           </div>
           <div className="block lg:hidden">
-            <button className={`flex flex-col items-center hamburger justify-center p-2 ml-3 ${isActive ? 'active' : ''} `} onClick={toggleMenu}>
+            <button className={`hamburger  ${isActive ? 'active' : ''} `} onClick={toggleMenu}>
               <div className="w-6 h-0.5 bg-white mb-[6px] "></div>
               <div className="w-6 h-0.5 bg-white mb-[6px] "></div>
               <div className="w-6 h-0.5 bg-white"></div>

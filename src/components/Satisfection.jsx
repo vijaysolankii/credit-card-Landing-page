@@ -2,7 +2,6 @@ import React from "react";
 import Stars5 from "../images/5stars.svg";
 import Stars4 from "../images/4stars.svg";
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Grid, Pagination } from "swiper/modules";
 import "../../node_modules/swiper/swiper-bundle.css";
@@ -108,14 +107,14 @@ export let carouselData = [
 
 const Satisfection = () => {
   return (
-    <section className="satisfection xl:py-[200px] md:py-[140px] py-[50px]">
-      <div className="container mx-auto px-5">
-        <div className="satisfection-heading text-center">
-          <h2 className="text-white xl:text-h2 md:text-h3 text-h5 xl:mb-16 md:mb-10 mb-6 leading-[38px]  md:leading-[1.2] xl:leading-12 ">
-            Customer are satisfied with <strong className="text-pink md:block inline-block">the features</strong> we provide
+    <section className="satisfection">
+      <div className="container">
+        <div className="satisfection-heading">
+          <h2>
+            Customer are satisfied with <strong>the features</strong> we provide
           </h2>
-          <p className="text-white/60 xl:text-2xl md:text-xl">
-            With the various features we provide, therefore many customer like
+          <p>
+            With the various features we provide,therefore many customer like
             the features that we provide
           </p>
         </div>
@@ -128,35 +127,34 @@ const Satisfection = () => {
           pagination={{
             clickable: true,
           }}
-          
           modules={[Grid, Pagination]}
-          className="mySwiper md:mt-24 mt-12 xl:pb-[150px] md:pb-[100px] max-[450px]:pb-[100px]"
+          className="mySwiper"
           breakpoints={{
-            250:{
-                slidesPerView:1,
-                centeredSlides:true,
-                spaceBetween:30,
-                grid:1
+            250: {
+              slidesPerView: 1,
+              centeredSlides: true,
+              spaceBetween: 30,
+              grid: 1,
             },
-            768:{
-                spaceBetween:50,
-                grid:1
+            768: {
+              spaceBetween: 50,
+              grid: 1,
             },
-            991:{
-                spaceBetween:100,
-            }
+            991: {
+              spaceBetween: 100,
+            },
           }}
         >
           {carouselData.length > 1 &&
             carouselData.map((item, index) => (
-              <SwiperSlide key={index} className="bg-dark-light py-6 px-6 flex flex-col gap-y-[30px]">
+              <SwiperSlide key={index}>
                 <div className="star-rating">
                   <img src={item.img} alt={item.userName} />
                 </div>
-                <p className="text-lg">{item.content}</p>
+                <p>{item.content}</p>
                 <div className="mini-info">
-                  <p className="text-lg">{item.userName}</p>
-                  <p className="text-white/50">{item.fromWhere}</p>
+                  <p>{item.userName}</p>
+                  <p>{item.fromWhere}</p>
                 </div>
               </SwiperSlide>
             ))}

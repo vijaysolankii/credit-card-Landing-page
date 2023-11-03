@@ -43,22 +43,22 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div className="marquee py-6 md:py-10 bg-dark-light">
+    <div className="marquee">
       <div className="overflow-hidden">
         <div ref={swiperRef} className="swiper-container">
           <div className="swiper-wrapper oWrap">
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
-            <div className="swiper-slide text-white text-center"><figure><img className="w-[75px]  md:w-[150px]" src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
+            <div className="swiper-slide"><figure><img src={Logo} alt="Logo Item" /></figure></div>
             {/* Add more slides as needed */}
           </div>
         </div>
