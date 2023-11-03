@@ -13,6 +13,7 @@
 
 >> animation
     >> add loader
+    >> add steller lib for parallax 
     >> header fadeDown
 
     >> heading overflow heading animation
