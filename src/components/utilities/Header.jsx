@@ -8,6 +8,7 @@ const Header = () => {
   let navItems = [ "Home","Feature","Pricing","About Us" ]
 
   useEffect(() => {
+    document.querySelector('header').classList.add('load')
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };

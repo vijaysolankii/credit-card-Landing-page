@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import FrontImg from '../images/frontCards.png'
 import BackImg from '../images/backCards.png'
 
 const HeroSection = () => {
+  useEffect(() => {
+    document.querySelector('.heroSection').classList.add('load')
+    return () => {
+      document.querySelector('.heroSection').classList.remove('load')
+    }
+  }, [])
+  
+
   return (
     <section className="heroSection">
       <div className="container">
-        <h1>Simplify All Transections <br/> in <strong>One Card</strong></h1>
+        <span className="heading">
+          <span className="slide-up">
+            <h1>Simplify All Transections <br/> in <strong>One Card</strong></h1>
+          </span>
+        </span>
         <p>Hurry up and join now, with this you can manage your daily <br /> finance easily and safely.</p>
         <div>
           <a className='btn' href="#">

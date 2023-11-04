@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
 import Swiper from "swiper/bundle";
 import "../../node_modules/swiper/swiper-bundle.css";
 import Logo from '../images/Logo.svg'
 
 const HeroCarousel = () => {
+  const [ref, isVisible] = useIntersectionObserver();
   const swiperRef = useRef(null);
 
   useEffect(() => {
@@ -43,7 +45,7 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div className="marquee">
+    <div className={`marquee ${isVisible ? 'showItem delay-[1.8s] duration-1000' : 'hideItem'}`} ref={ref}>
       <div className="overflow-hidden">
         <div ref={swiperRef} className="swiper-container">
           <div className="swiper-wrapper oWrap">
