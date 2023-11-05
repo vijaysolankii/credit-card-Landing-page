@@ -17,6 +17,7 @@ const Popup = ({ isOpen, closePopup }) => {
 
     // Handle form submission logic (e.g., API call or data processing)
     console.log('Form submitted:', formData);
+    
 
     // Form field validation
     let isError = false;
@@ -35,6 +36,7 @@ const Popup = ({ isOpen, closePopup }) => {
       return;
     } else {
       setError('');
+      setFormData({ name: '', email: '', contact: '', recommendation: '' });
     }
     
     setIsClosing(true);
@@ -63,7 +65,7 @@ const Popup = ({ isOpen, closePopup }) => {
 
   return isOpen ? (
     <div className={`popup fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity ${isClosing ? 'opacity-0' : 'opacity-100'}`} onClick={handleClick}>
-      <div className="bg-white p-8 rounded-lg" onClick={stopPropagation}>
+      <div className="w-full mx-[15px] md:mx-0 md:w-2/4 bg-white p-8 rounded-lg" onClick={stopPropagation}>
         <h2 className="text-lg font-bold mb-4">Provide Details</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -83,6 +85,7 @@ const Popup = ({ isOpen, closePopup }) => {
             <textarea id="recommendation" name="recommendation" onChange={handleInputChange} value={formData.recommendation} className={`w-full border ${errorFields.recommendation ? 'border-red-500' : 'border-gray-300'} rounded-md py-2 px-3`} onClick={stopPropagation} />
           </div>
           {error && <p className="text-red-500 mb-4">{error}</p>}
+          
           <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
         </form>
       </div>

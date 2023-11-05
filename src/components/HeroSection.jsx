@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import Popup from '../components/utilities/Popup'
 import FrontImg from '../images/frontCards.png'
 import BackImg from '../images/backCards.png'
 
@@ -11,6 +11,11 @@ const HeroSection = () => {
     }
   }, [])
   
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
 
   return (
     <section className="heroSection">
@@ -22,7 +27,7 @@ const HeroSection = () => {
         </span>
         <p>Hurry up and join now, with this you can manage your daily <br /> finance easily and safely.</p>
         <div>
-          <a className='btn' href="#">
+          <a onClick={togglePopup} className='btn' href="#">
             <span className="squre-1"></span>
             <span className="squre-2"></span>
             <span className='content'>Get Started</span>
@@ -52,6 +57,7 @@ const HeroSection = () => {
         <figure>
         </figure>
       </div>
+      <Popup isOpen={isPopupOpen} closePopup={togglePopup} />
     </section>
   )
 }
