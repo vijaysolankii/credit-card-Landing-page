@@ -1,9 +1,11 @@
 import React from 'react'
+import useIntersectionObserver from './useIntersectionObserver';
 
 const Footer = () => {
   const navLinks = ["Branding","Contact US","Privacy Policy","FAQs",]
+  const [ref, isVisible] = useIntersectionObserver();
   return (
-    <footer>
+    <footer className={`${isVisible ? 'load' : ''}`} ref={ref}>
       <div className="container">
         <div className="footer-wrap">
           <div className="footer-wrap-logo">

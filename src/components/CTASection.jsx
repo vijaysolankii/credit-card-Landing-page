@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
+import Popup from '../components/utilities/Popup'
 
 const CTASection = () => {
+  const [ref, isVisible] = useIntersectionObserver();
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
   return (
-    <section className="CTA">
+    <section className={`CTA ${isVisible ? 'load' : ''}`} ref={ref}>
       <div className="container">
           <h2>Let's start <strong>customizing</strong> your <br /> card now</h2>
           <div>
-            <a className='btn' href="#">
+            <a onClick={togglePopup} className='btn'>
               <span className="squre-1"></span>
               <span className="squre-2"></span>
               <span className='content'>Get Started</span>
@@ -18,6 +28,7 @@ const CTASection = () => {
             </a>
         </div>
       </div>
+      <Popup isOpen={isPopupOpen} closePopup={togglePopup} />
       <div className="CTA-Inner-overlay"></div>
       <div className="CTA-Inner-overlay"></div>
     </section>

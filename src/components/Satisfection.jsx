@@ -5,13 +5,14 @@ import Stars4 from "../images/4stars.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Grid, Pagination } from "swiper/modules";
 import "../../node_modules/swiper/swiper-bundle.css";
+import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
 
 export let carouselData = [
   {
     id: 1,
     img: Stars5,
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
     userName: "Lorem, ipsum.",
     fromWhere: "paris, French",
   },
@@ -27,7 +28,7 @@ export let carouselData = [
     id: 3,
     img: Stars5,
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
     userName: "Lorem, ipsum.",
     fromWhere: "Jakarta, Indonesia",
   },
@@ -35,7 +36,7 @@ export let carouselData = [
     id: 4,
     img: Stars4,
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
     userName: "Lorem, ipsum.",
     fromWhere: "Wagon, Indonesia",
   },
@@ -51,7 +52,7 @@ export let carouselData = [
     id: 6,
     img: Stars5,
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore praesentium architecto illo.",
     userName: "Lorem, ipsum.",
     fromWhere: "Shanghai, China",
   },
@@ -106,13 +107,13 @@ export let carouselData = [
 ];
 
 const Satisfection = () => {
+  const [ref, isVisible] = useIntersectionObserver();
   return (
-    <section className="satisfection">
+    <section className={`satisfection ${isVisible ? 'load' : ''}`} ref={ref}>
       <div className="container">
         <div className="satisfection-heading">
-          <h2>
-            Customer are satisfied with <strong>the features</strong> we provide
-          </h2>
+          <span className="heading"><span className="slide-up"><h2> Customer are satisfied with <strong>the features</strong> we provide </h2></span></span>
+          
           <p>
             With the various features we provide,therefore many customer like
             the features that we provide
