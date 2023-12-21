@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Popup from "./Popup";
+import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isActive, setIsActive] = useState(false);
-
   let navItems = ["Home", "Feature", "Pricing", "About Us"];
 
   useEffect(() => {
@@ -30,10 +30,10 @@ const Header = () => {
     setIsPopupOpen(!isPopupOpen);
     setIsActive(!isActive);
   };
-
+  const [ref, isVisible] = useIntersectionObserver();
   return (
     <>
-      <header>
+      <header className={`${isVisible ? 'load' : ''}`} ref={ref}>
         <nav>
           <div className="container">
             <div className="wrapperNav">
