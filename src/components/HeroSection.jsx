@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Popup from '../components/utilities/Popup'
 import FrontImg from '../images/frontCards.png'
 import BackImg from '../images/backCards.png'
+import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
+
 
 const HeroSection = () => {
   useEffect(() => {
@@ -17,8 +19,10 @@ const HeroSection = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  const [ref, isVisible] = useIntersectionObserver();
+
   return (
-    <section className="heroSection">
+    <section className={`heroSection ${isVisible ? 'load' : ''}`} ref={ref}>
       <div className="container">
         <span className="heading">
           <span className="slide-up">

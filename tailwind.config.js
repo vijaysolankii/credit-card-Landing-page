@@ -1,9 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  purge: {
+    enabled: true, // enable while you complete development
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],  
+  },
+  content: [ "./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: { 
       fontSize: {
@@ -19,8 +20,8 @@ export default {
       },
       colors:{
         pink : {
-          DEFAULT : '#F637EC',
-          dark : '#6f236b',
+          DEFAULT : '#0c8bfd',
+          light : '#0c8bfd',
         },
         dark : {
           DEFAULT : "#151515",

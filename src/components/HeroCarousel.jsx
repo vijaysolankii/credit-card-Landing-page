@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
 import useIntersectionObserver from '../components/utilities/useIntersectionObserver';
+import React, { useEffect, useRef } from "react";
 import Swiper from "swiper/bundle";
 import "../../node_modules/swiper/swiper-bundle.css";
 import Logo from '../images/Logo.svg'
@@ -9,6 +9,7 @@ const HeroCarousel = () => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
+
     const mySwiper = new Swiper(swiperRef.current, {
       slidesPerView: "auto",
       speed: 4000,
